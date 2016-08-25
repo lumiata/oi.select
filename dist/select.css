@@ -198,15 +198,14 @@ oi-select.with-floating-label .floating-label {
   position: absolute;
   left: 10px;
   cursor: text;
-}
-oi-select.with-floating-label.ng-empty .floating-label {
-  top: 12px;
-}
-oi-select.with-floating-label.ng-not-empty .floating-label {
   font-size: 10px;
   top: 8px;
 }
-oi-select.with-floating-label.ng-empty.focused .floating-label {
+oi-select.with-floating-label.ng-pristine .floating-label {
+  font-size: 14px;
+  top: 12px;
+}
+oi-select.with-floating-label.ng-pristine.focused .floating-label {
   font-size: 10px;
   top: 8px;
 }
