@@ -32,6 +32,7 @@ angular.module('selectDemo', ['oi.select', 'ngResource', 'hljs', 'gettext' /*, '
 
     .controller('selectDocsController', function ($scope, $location) {
         var menu = [
+            {urlName: 'floatinglabel',   name: 'Floating label'},
             {urlName: 'autofocus',       name: 'Autofocus'},
             {urlName: 'multiple',        name: 'Multiple'},
             {urlName: 'single',          name: 'Single'},
