@@ -195,3 +195,30 @@ oi-select
     .select-dropdown-optgroup-option
       strong
         font-weight normal
+
+  &.with-floating-label
+    .select-search
+      padding-top 10px
+    .floating-label
+      margin 0
+      color #999
+      font-weight normal
+      position absolute
+      left 10px
+      cursor text
+    &.ng-empty
+      .floating-label
+        top 12px
+    &.ng-not-empty
+      .floating-label
+        font-size 10px
+        top 8px
+    &.ng-empty
+      &.focused
+        .floating-label
+          font-size 10px
+          top 8px
+    &:not(.multiple):not(.cleanMode)
+      .select-search
+        &:after
+          bottom 19px

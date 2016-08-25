@@ -95,6 +95,7 @@ angular.module('oi.select')
             if (event && event.target.nodeName !== 'INPUT') return; //for IE
 
             isBlur = false;
+            isFocused = false;
 
             if (isMousedown) {
                 isBlur = true;
@@ -413,7 +414,8 @@ angular.module('oi.select')
                     options             = angular.extend({cleanModel: elementOptions.newItem === 'prompt'}, oiSelect.options, elementOptions),
                     editItem            = options.editItem,
                     editItemIsCorrected = editItem === 'correct',
-                    waitTime            = 0;
+                    waitTime            = 0,
+                    floatingLabel       = attrs.floatingLabel;
 
                 if (editItem === true || editItem === 'correct') {
                     editItem = 'oiSelectEditItem';
@@ -469,6 +471,11 @@ angular.module('oi.select')
 
                 if (options.maxlength) {
                     inputElement.attr('maxlength', options.maxlength);
+                }
+
+                if (floatingLabel) {
+                    scope.floatingLabel = floatingLabel;
+                    element.addClass('with-floating-label');
                 }
 
                 attrs.$observe('disabled', function(value) {
