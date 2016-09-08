@@ -212,3 +212,12 @@ oi-select.with-floating-label.ng-pristine.focused .floating-label {
 oi-select.with-floating-label:not(.multiple):not(.cleanMode) .select-search:after {
   bottom: 19px;
 }
+oi-select.with-floating-label[readonly] .floating-label {
+  cursor: pointer;
+}
+oi-select.with-floating-label[readonly] .select-search {
+  cursor: pointer;
+}
+oi-select.with-floating-label[readonly] .select-search input {
+  cursor: pointer;
+}
