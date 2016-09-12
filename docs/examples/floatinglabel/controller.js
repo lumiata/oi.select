@@ -4,4 +4,9 @@ angular.module('selectDemo')
         $scope.shopArr = ShopArr.query();
 
         $scope.bundle = null;
+        $scope.bundle2 = {
+            "id": 5,
+            "name": "shirt",
+            "category": "clothes"
+        };
     });

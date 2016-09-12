@@ -21,4 +21,24 @@ floating-label="Floating label"
 <div class="col-md-4"><pre>{{bundle}}</pre></div>
 </div>
 
+    <br/>
+
+    <p>When initial value is present, floating label should be small</p>
+    <div class="row">
+        <div class="col-md-8">
+            <oi-select
+                oi-options="item.name for item in shopArr"
+                ng-model="bundle2"
+                floating-label="Floating label"></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in shopArr"
+ng-model="bundle2"
+</div>
+<div class="col-md-4"><pre>{{bundle2}}</pre></div>
+</div>
+
 </div>
