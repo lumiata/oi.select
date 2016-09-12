@@ -60,7 +60,7 @@ angular.module('selectDemo', ['oi.select', 'ngResource', 'hljs', 'gettext' /*, '
         $scope.demo.menu = menu;
 
         $scope.$on('$locationChangeSuccess', function() {
-            var hash = $location.hash() || 'autofocus';
+            var hash = $location.hash() || 'floatinglabel';
 
             $scope.demo.name = hash;
             $scope.demo.viewUrl = URL + 'examples/' + hash + '/template.html';
