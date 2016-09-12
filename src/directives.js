@@ -203,6 +203,8 @@ angular.module('oi.select')
                             scope.removeItem(collection.length); //if newItem was not created
                         }
                     });
+
+                    element.addClass(value ? 'val-not-empty' : 'val-empty');
                 });
 
                 scope.$watch('query', function(inputValue, oldValue) {

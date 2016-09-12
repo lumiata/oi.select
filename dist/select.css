@@ -206,7 +206,7 @@ oi-select.with-floating-label.ng-pristine .floating-label {
   top: 12px;
 }
 oi-select.with-floating-label.ng-pristine.focused .floating-label,
-oi-select.with-floating-label.ng-pristine.ng-not-empty .floating-label {
+oi-select.with-floating-label.ng-pristine.val-not-empty .floating-label {
   font-size: 10px;
   top: 8px;
 }
