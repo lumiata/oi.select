@@ -1,7 +1,8 @@
 angular.module('selectDemo')
-    .controller('selectFloatinglabelController', function ($scope, ShopArr) {
+    .controller('selectFloatinglabelController', function ($scope, ShopArr, LongOptions) {
 
         $scope.shopArr = ShopArr.query();
+        $scope.longOptions = LongOptions.query();
 
         $scope.bundle = null;
         $scope.bundle2 = {
@@ -9,4 +10,6 @@ angular.module('selectDemo')
             "name": "shirt",
             "category": "clothes"
         };
+        $scope.bundle3 = null;
+
     });

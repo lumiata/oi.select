@@ -222,3 +222,12 @@ oi-select.with-floating-label[readonly] .select-search {
 oi-select.with-floating-label[readonly] .select-search input {
   cursor: pointer;
 }
+oi-select.with-floating-label.oi-ellipsis .select-search-list-item_selection,
+oi-select.with-floating-label.oi-ellipsis .select-dropdown-optgroup-option {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+oi-select.with-floating-label.oi-ellipsis .select-search-list-item_selection {
+  padding-right: 10px;
+}

@@ -415,7 +415,8 @@ angular.module('oi.select')
                     editItem            = options.editItem,
                     editItemIsCorrected = editItem === 'correct',
                     waitTime            = 0,
-                    floatingLabel       = attrs.floatingLabel;
+                    floatingLabel       = attrs.floatingLabel,
+                    ellipsis            = attrs.ellipsis === 'true';
 
                 if (editItem === true || editItem === 'correct') {
                     editItem = 'oiSelectEditItem';
@@ -476,6 +477,11 @@ angular.module('oi.select')
                 if (floatingLabel) {
                     scope.floatingLabel = floatingLabel;
                     element.addClass('with-floating-label');
+                }
+
+                if (ellipsis) {
+                    scope.ellipsis = ellipsis;
+                    element.addClass('oi-ellipsis');
                 }
 
                 attrs.$observe('disabled', function(value) {
@@ -782,6 +788,7 @@ angular.module('oi.select')
                 };
 
                 scope.getDisableWhen = getDisableWhen;
+                scope.getLabel = getLabel;
 
 
                 resetMatches();
