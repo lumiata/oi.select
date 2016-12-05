@@ -30,6 +30,13 @@ angular.module('selectDemo', ['oi.select', 'ngResource', 'hljs', 'gettext' /*, '
         );
     })
 
+    .factory('LongOptions', function ($resource) {
+        return $resource(URL + 'data/longOptions.json', {}, {
+                get:   {method: 'GET', cache: true}
+            }
+        );
+    })
+
     .controller('selectDocsController', function ($scope, $location) {
         var menu = [
             {urlName: 'floatinglabel',   name: 'Floating label'},

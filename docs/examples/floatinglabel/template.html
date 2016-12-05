@@ -41,4 +41,26 @@ ng-model="bundle2"
 <div class="col-md-4"><pre>{{bundle2}}</pre></div>
 </div>
 
+    <br/>
+
+    <p>When options are long, use ellipsis.</p>
+    <div class="row">
+        <div class="col-md-4">
+            <oi-select
+                oi-options="item.name for item in longOptions"
+                ng-model="bundle3"
+                floating-label="Floating label"
+                ellipsis="true"></oi-select>
+        </div>
+    </div>
+
+<div class="row">
+<div hljs class="col-md-8">
+oi-options="item.name for item in longOptions"
+ng-model="bundle3"
+ellipsis="true"
+</div>
+<div class="col-md-4"><pre>{{bundle3}}</pre></div>
+</div>
+
 </div>
