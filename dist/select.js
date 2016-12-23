@@ -417,7 +417,8 @@ angular.module('oi.select')
                     waitTime            = 0,
                     floatingLabel       = attrs.floatingLabel,
                     ellipsis            = attrs.ellipsis === 'true',
-                    scrollForVisible    = attrs.scrollForVisible === 'true';
+                    scrollForVisible    = attrs.scrollForVisible === 'true',
+                    scrollFvParent      = attrs.scrollFvParent;
 
                 if (editItem === true || editItem === 'correct') {
                     editItem = 'oiSelectEditItem';
@@ -602,7 +603,8 @@ angular.module('oi.select')
 
                                 if (needToScroll) {
                                     var delta = listElementBottom - docViewHeight + 10;
-                                    window.scrollBy(0, delta);
+                                    var elemForScrolling = document.getElementsByClassName(scrollFvParent)[0] || window;
+                                    elemForScrolling.scrollBy(0, delta);
                                 }
                             }, 50);
                         }
