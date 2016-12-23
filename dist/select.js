@@ -416,7 +416,8 @@ angular.module('oi.select')
                     editItemIsCorrected = editItem === 'correct',
                     waitTime            = 0,
                     floatingLabel       = attrs.floatingLabel,
-                    ellipsis            = attrs.ellipsis === 'true';
+                    ellipsis            = attrs.ellipsis === 'true',
+                    scrollForVisible    = attrs.scrollForVisible === 'true';
 
                 if (editItem === true || editItem === 'correct') {
                     editItem = 'oiSelectEditItem';
@@ -591,6 +592,24 @@ angular.module('oi.select')
                     $animate[isOpen ? 'addClass' : 'removeClass'](element, 'open', !isOldAngular && {
                         tempClasses: 'open-animate'
                     });
+
+                    if (scrollForVisible) {
+                        if (isOpen) {
+                            scope.timerId = setTimeout(function() {
+                                var docViewHeight = document.documentElement.clientHeight;
+                                var listElementBottom = listElement[0].getBoundingClientRect().bottom;
+                                var needToScroll = listElementBottom > docViewHeight;
+
+                                if (needToScroll) {
+                                    var delta = listElementBottom - docViewHeight + 10;
+                                    window.scrollBy(0, delta);
+                                }
+                            }, 50);
+                        }
+                        else {
+                            clearTimeout(scope.timerId);
+                        }
+                    }
                 });
 
                 scope.$watch('isEmptyList', function(isEmptyList) {
