@@ -268,7 +268,12 @@ angular.module('oi.select')
                                 if (needToScroll) {
                                     var delta = listElementBottom - docViewHeight + 10;
                                     var elemForScrolling = document.getElementsByClassName(scrollFvParent)[0] || window;
-                                    elemForScrolling.scrollBy(0, delta);
+                                    if (elemForScrolling.scrollBy) {
+                                        elemForScrolling.scrollBy(0, delta);
+                                    }
+                                    else {
+                                        elemForScrolling.scrollTop += delta;
+                                    }
                                 }
                             }, 50);
                         }
